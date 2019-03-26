@@ -12,7 +12,7 @@ sock.bind((UDP_IP, IN_PORT))
 
 while True:
     data, addr = sock.recvfrom(1024)
-    data1 = data[:5] + "outC2.jpg" 
+    data1 = data[:5] + "Client2.jpg" 
     print("ini adalah "+data1)
     if data1:
         print "File name:", data1
