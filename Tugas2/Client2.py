@@ -1,10 +1,11 @@
 import socket
 import select
+import os
 
 UDP_IP = "127.0.0.2"
 IN_PORT = 9000
 timeout = 5
-
+save_path = 'D:/ProgjarF/ProgjarF/Tugas2/Client2/'
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  
@@ -16,7 +17,7 @@ while True:
     print("ini adalah "+data1)
     if data1:
         print "File name:", data1
-        file_name = data1
+        file_name = os.path.join(save_path, data1)
 
     f = open(file_name, 'wb')
 
